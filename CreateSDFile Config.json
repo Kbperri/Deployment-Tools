@@ -1,0 +1,35 @@
+{
+    "toolbox": "C:\\Example.pyt",
+    "alias": "alias",
+    "toolName": "ExampleTool",
+    "toolArgs": [
+        "argOne",
+        "argTwo"
+    ],
+    "sdDraft": "C:\\Example.sddraft",
+    "sd": "C:\\Example.sd",
+    "portalURL": "https://<machine>.<domain>/portal",
+    "portalUsername": "UserName",
+    "portalPassword": "Password",
+    "serverURL": "https://<machine>.<domain>/server",
+    "serviceName": "Example",
+    "serverType": "ARCGIS_SERVER",
+    "connectionFilePath": "C:\\server on <machine>.<domain>.ags",
+    "copyDataToServer": true,
+    "folderName": "ExampleFolder",
+    "summary": "Example Tool that does things",
+    "tags": "tag",
+    "executionType": "Asynchronous",
+    "resultMapServer": false,
+    "showMessages": "INFO",
+    "maximumRecords": 1000,
+    "minInstances": 1,
+    "maxInstances": 2,
+    "maxUsageTime": 600,
+    "maxWaitTime": 60,
+    "maxIdleTime": 600,
+    "constantValues": [
+        "paramOne",
+        "paramTwo"
+    ]
+}
