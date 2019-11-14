@@ -3,10 +3,11 @@ import json
 
 def CreateSDFile(configFile):
     try:
-        config = json.load(configFile)
-    except:
+        with open(configFile) as json_config:
+            config = json.load(json_config)
+    except Exception as e:
         arcpy.AddMessage("Failed to load config.")
-        print("Failed to load config.")
+        return
     
     try:
         toolbox = config["toolbox"]
@@ -38,13 +39,13 @@ def CreateSDFile(configFile):
         constantValues = config["constantValues"]
     except KeyError as keyErr:
         arcpy.AddMessage(f"Config file missing value: {keyErr}")
-        print(f"Config file missing value: {keyErr}")
+        return
     except Exception as e:
         arcpy.AddMessage(f"Error occured in retreiving config values: {e}")
-        print(f"Error occured in retreiving config values: {e}")
+        return
 
-    arcpy.AddMessage("Starting.")
-    arcpy.ImportToolbox(toolbox, "SDCreation")
+    arcpy.AddMessage("Successfuly read all configuration values.")
+    arcpy.ImportToolbox(toolbox, alias)
     arcpy.AddMessage(arcpy.GetMessages(0))
     customToolMethod = getattr(arcpy, f"{toolName}_{alias}")
     result = customToolMethod(*toolArgs)
