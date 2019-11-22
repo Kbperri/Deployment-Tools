@@ -30,6 +30,8 @@ class CreateSDFileTool(object):
             parameterType="Required",
         )
 
+        configFile.value = r"C:\Users\kyle9645\Documents\GitHub\Deployment-Tools\CreateSDFile Config.json"
+
         params = [configFile]
         return params
 
